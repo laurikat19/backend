@@ -2,6 +2,8 @@ from django.db import models
 from backend.utils.classes.BaseAbstractModel import BaseModel
 from backend.asignatura.models import Asignatura
 from backend.profesor.models import Profesor
+
+
 class Clase(BaseModel):
     asignatura = models.ForeignKey(
         Asignatura,
@@ -18,5 +20,6 @@ class Clase(BaseModel):
 
     class Meta:
         unique_together = ('salon', 'horario',)
+
     def __str__(self):
         return self.asignatura.nombre + ' - ' + self.salon
