@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('backend.asignatura.api.urls', 'asignaturas'), namespace='asignaturas')),
     path('', include(('backend.profesor.api.urls', 'profesores'), namespace='profesores')),
+    path('', include(('backend.clase.api.urls', 'clases'), namespace='clases')),
 ]
