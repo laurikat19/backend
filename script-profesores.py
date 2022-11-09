@@ -28,8 +28,8 @@ def cargue():
             profesores = json.loads(response.text)
             for profesor in profesores:
                 Profesor.objects.create(
-                    name=profesor['Nomb_Prof'],
-                    email=profesor['Corr_Prof'],
+                    nombre=profesor['Nomb_Prof'],
+                    correo=profesor['Corr_Prof'],
                     telefono=profesor['Tele_Prof']
                 )
     except Exception as e:
