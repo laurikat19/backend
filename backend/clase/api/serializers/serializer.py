@@ -11,7 +11,7 @@ class ClaseSerializer(serializers.ModelSerializer):
         return {
             "id": instance.id,
             "salon": instance.salon,
-            "horario": instance.Horario,
+            "horario": instance.horario,
             "profesor_id": instance.profesor.id,
             "profesor": instance.profesor.nombre,
             "asignatura_id": instance.asignatura.id,

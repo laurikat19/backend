@@ -34,7 +34,7 @@ def cargue():
                         correo=profesor['Corr_Prof'],
                         telefono=profesor['Tele_Prof']
                     )
-                    +(+count)
+                    count = count + 1
                 except Exception as e:
                     print(f"Fallo Cargue {profesor['Nomb_Prof']} - {profesor['Corr_Prof']} - {profesor['Tele_Prof']}")
                     print(e)
