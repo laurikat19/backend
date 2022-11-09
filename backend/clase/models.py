@@ -20,6 +20,7 @@ class Clase(BaseModel):
 
     class Meta:
         unique_together = ('salon', 'horario',)
+        unique_together = ('profesor', 'horario',)
 
     def __str__(self):
         return self.asignatura.nombre + ' - ' + self.salon
