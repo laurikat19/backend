@@ -45,7 +45,9 @@ LOCAL_APPS = [
     'backend.profesor',
 ]
 
-THIRD_APPS = []
+THIRD_APPS = [
+    'rest_framework',
+]
 
 INSTALLED_APPS = LOCAL_APPS + THIRD_APPS + BASE_APPS
 
