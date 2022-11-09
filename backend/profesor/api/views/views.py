@@ -14,7 +14,7 @@ class ProfesorViewSet(
 ):
     serializer_class = ProfesorSerializer
     queryset = Profesor.objects.filter(is_active=True)
-    lookup_field = 'nombre'
+    lookup_field = 'id'
 
     def perform_destroy(self, instance):
         """Disable profile."""

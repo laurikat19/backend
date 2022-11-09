@@ -14,7 +14,7 @@ class AsignaturaViewSet(
 ):
     serializer_class = AsignaturaSerializer
     queryset = Asignatura.objects.filter(is_active=True)
-    lookup_field = 'nombre'
+    lookup_field = 'id'
 
     def perform_destroy(self, instance):
         """Disable profile."""
