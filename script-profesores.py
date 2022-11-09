@@ -25,13 +25,20 @@ def cargue():
             print(response.text)
             exit(1)
         else:
+            count = 0
             profesores = json.loads(response.text)
             for profesor in profesores:
-                Profesor.objects.create(
-                    nombre=profesor['Nomb_Prof'],
-                    correo=profesor['Corr_Prof'],
-                    telefono=profesor['Tele_Prof']
-                )
+                try:
+                    Profesor.objects.create(
+                        nombre=profesor['Nomb_Prof'],
+                        correo=profesor['Corr_Prof'],
+                        telefono=profesor['Tele_Prof']
+                    )
+                    +(+count)
+                except Exception as e:
+                    print(f"Fallo Cargue {profesor['Nomb_Prof']} - {profesor['Corr_Prof']} - {profesor['Tele_Prof']}")
+                    print(e)
+            return count
     except Exception as e:
         print(e)
         exit(1)
@@ -40,6 +47,7 @@ if __name__ == '__main__':
     print('Inicio Cargue de Profesores')
     start = time.strftime("%Y-%m-%d %H:%M:%S")
     print(f'Inicio Cargue {start}')
-    cargue()
+    total = cargue()
     end = time.strftime("%Y-%m-%d %H:%M:%S")
     print(f'Fin Cargue {end}')
+    print(f'Profesores Cargados {total}')
